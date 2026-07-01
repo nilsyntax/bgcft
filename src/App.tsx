@@ -1,10 +1,10 @@
-import './App.css'
-import Sidebar from './components/layout/sidebar'
+// import './App.css'
+import Area from "./components/layout/Area"
 function App() {
 
   return (
     <>
-      <Sidebar />
+      <Area/>
     </>
   )
 }

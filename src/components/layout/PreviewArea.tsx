@@ -1,4 +1,5 @@
 import PreviewCanvas from "../ui/previewCanvas"
+
 function PreviewArea() {
    return (
       <>

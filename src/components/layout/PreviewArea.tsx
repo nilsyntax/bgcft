@@ -1,4 +1,4 @@
-import PreviewCanvas from "../ui/previewCanvas"
+import PreviewCanvas from "./previewCanvas"
 
 function PreviewArea() {
    return (

@@ -1,10 +1,10 @@
 // import './App.css'
-import Area from "./components/layout/Area"
+import Layout from "./layout/Layout"
 function App() {
 
   return (
     <>
-      <Area/>
+      <Layout/>
     </>
   )
 }

@@ -9,9 +9,17 @@
 
 body{
    background-color: #C9D4DF;
+   background:
+    radial-gradient(circle at 20% 30%, #5f73ff 0%, transparent 40%),
+    radial-gradient(circle at 35% 90%, #ff4fa3 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, #46ffd4 0%, transparent 40%),
+    linear-gradient(135deg, #b7f5ff, #bdf6f1);
+
+  background-repeat: no-repeat;
 }
 html, body, #root {
    width: 100%;
    height: 100%;
    /* background-color: seagreen; */
 }
+

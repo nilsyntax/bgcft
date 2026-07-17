@@ -1,17 +1,21 @@
 import Sidebar from "./Sidebar"
 import PreviewArea from "./PreviewArea"
-import StyleList from "./PresetList"
+import PresetList from "./PresetList"
+import Button from "../components/Button"
 
-function Area(){
-   // I can do it here
-   
+function Layout(){
+   const clickHandle = () => {
+      console.log("Button Clicked");
+   }
+
    return (
-      <div id="area" className="w-full h-full flex px-2 py-4">
+      <div id="area" className="relative h-full border border-red-300">
          <Sidebar/>
          <PreviewArea/>
-         <StyleList/>
+         <PresetList/>
+         <Button value="Randomize" onClickAction={clickHandle}/>
       </div>
    )
 }
 
-export default Area
+export default Layout

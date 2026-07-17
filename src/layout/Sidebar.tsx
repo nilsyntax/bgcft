@@ -1,4 +1,4 @@
-import HidePanel  from "@/assets/icons/hidepanel.svg?react";
+import HidePanel from "@/assets/icons/hidepanel.svg?react";
 
 
 function Sidebar() {
@@ -12,7 +12,7 @@ function Sidebar() {
             </div>
 
             <div className="flex justify-between items-center h-full w-full my-0 rounded-xl bg-gray-50/60 px-3 py-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-            <p className="px-3 py-1.5 text-2xl">Control for background styles goes here</p>
+               <p className="px-3 py-1.5 text-2xl">Control for background styles goes here</p>
             </div>
          </div>
       </>

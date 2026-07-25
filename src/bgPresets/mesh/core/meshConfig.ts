@@ -13,13 +13,13 @@ interface Position {
 
 export interface ShapeProps {
    shape: string
-   color: ColorPalette
+   color: string
    position: Position
    rotation: number
    scale: number
    blur: number
-   opacity: number
 }
+
 
 
 // ########### Configuration ##########
@@ -74,7 +74,7 @@ export const bgColorMode = {
    dark: "#FFFFFF"
 }
 
-export const colors: string[] = [
+export const meshColors: string[] = [
    "#5E6BFF", // Indigo Blue
    "#7C5CFF", // Violet
    "#A855F7", // Purple

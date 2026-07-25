@@ -7,13 +7,11 @@ export function Shapes({
    rotation,
    scale,
    blur,
-   opacity
 }: ShapeProps){
    return (
       <path
       d={shape}
-      fill={color.colors[0]}
-      opacity={opacity}
+      fill={color}
       transform={`
          translate(${position.x}, ${position.y})
          rotate(${rotation})
@@ -23,3 +21,6 @@ export function Shapes({
       />
    )
 }
+
+// opacity
+// opacity={opacity}

@@ -2,17 +2,17 @@
 import { pickOnce } from "../../../utils/pickOnce.ts"
 import { random } from "../../../utils/random.ts"
 
-import { shapePath, colorPalette, position } from "./meshConfig.ts"  // import the configs 
+import { shapePath, position, meshColors} from "./meshConfig.ts"  // import the configs 
 
 import { type ShapeProps } from "./meshConfig.ts"
 
 
 // generate the shapes data
 export function makeMesh(): ShapeProps[]{
-   const count = random(3, 4)
+   const count: number = 3
 
    const shapes = pickOnce(shapePath, count)
-   const colors = pickOnce(colorPalette, count)
+   const colors = pickOnce(meshColors, count)
    const shapePosition = pickOnce(position, count)
 
    return shapes.map((shape, i) => ({
@@ -21,14 +21,14 @@ export function makeMesh(): ShapeProps[]{
       color: colors[i],
       position: shapePosition[i],
       rotation: random(0, 360),
-      scale: random(0.8, 1.8),
-      blur: random(100, 180),
-      opacity: random(0.6, 1)
+      scale: random(1, 1.4),
+      blur: random(90, 100),
    }))
 }
 
 console.log(makeMesh())
 
+// opacity: random(0.6, 1)
 
 
 

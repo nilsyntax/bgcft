@@ -1,12 +1,16 @@
 import PreviewCanvas from "./previewCanvas"
-function PreviewArea() {
+import { type ShapeProps } from "../bgPresets/mesh/core/meshConfig"
 
+type previewAreaProps = {
+   mesh: ShapeProps[];
+}
 
+function PreviewArea({mesh}: previewAreaProps) {
 
    return (
       <>
-         <div className=" relative w-full h-full border-2 border-violet-500">
-            <PreviewCanvas/>
+         <div className=" relative w-full h-full">
+            <PreviewCanvas mesh={mesh}/>
          </div>
       </>
    )

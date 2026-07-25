@@ -1,51 +1,56 @@
 import { useState } from "react"
+import { RenderMesh } from "../bgPresets/mesh"
 
-function PreviewCanvas() {
+import { type ShapeProps } from "../bgPresets/mesh/core/meshConfig"
 
-   const [size, setSize] = useState({width: 800, height: 500})
+type PreviewCanvasProps = {
+   mesh: ShapeProps[];
+}
+
+function PreviewCanvas({mesh}: PreviewCanvasProps) {
+
+   const [size, setSize] = useState({ width: 800, height: 500 })
    const [width, setWidth] = useState(size.width)
    const [height, setHeight] = useState(size.height)
 
 
-   const applySize = (dimension: "width" | "height", value:number) => {
+   const applySize = (dimension: "width" | "height", value: number) => {
       setSize((prev) => ({
          ...prev,
          [dimension]: Number(value)
       }))
    }
    return (
-      <>
-         <div id="previewCanvas" className="w-fit h-fit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div id="previewTool" className="h-8 w-full">
+      <div id="previewCanvas" className="w-fit h-fit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+         <div id="previewTool" className="h-8 w-full">
 
-               <input type="number" defaultValue={width}
-                  onChange={(e) => setWidth(Number(e.target.value))}
-                  onKeyDown={(e) => {
-                     if (e.key === "Enter") {
-                        applySize("width", width)
-                     }
-                  }}
-               />
-               <input type="number" defaultValue={height}
-                  onChange={(e) => setHeight(Number(e.target.value))}
-                  onKeyDown={(e) => {
-                     if (e.key === "Enter") {
-                        applySize("height", height)
-                     }
-                  }}
-               />
-            </div>
-
-            <div id="canvasArea"
-               className="bg-gray-50/60 rounded-2xl"
-               style={{
-                  width: `${size.width}px`,
-                  height: `${size.height}px`
-               }}>
-
-            </div>
+            <input type="number" defaultValue={width}
+               onChange={(e) => setWidth(Number(e.target.value))}
+               onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                     applySize("width", width)
+                  }
+               }}
+            />
+            <input type="number" defaultValue={height}
+               onChange={(e) => setHeight(Number(e.target.value))}
+               onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                     applySize("height", height)
+                  }
+               }}
+            />
          </div>
-      </>
+
+         <div id="canvasArea"
+            className="bg-white rounded-2xl border-3 border-white overflow-hidden"
+            style={{
+               width: `${size.width}px`,
+               height: `${size.height}px`
+            }}>
+            <RenderMesh mesh={mesh}/>
+         </div>
+      </div>
    )
 }
 

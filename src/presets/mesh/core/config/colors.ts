@@ -33,33 +33,3 @@ export const colorPalette: ColorPalette[] = [
       bgColor: ["midnight", "navy", "slate"],
    },
 ]
-
-/*
-Now let's write the color configuration for color palette
-
-initially I have thought like this
-
-export interface ColorPalette {
-  bgColor: string
-  colors: string[]
-}
-
-export const colorPalette: ColorPalette = [
-   bgColor: "#"
-   colors: ["#", "#", "#"]
-   },
-   bgColor: "#"
-   colors: ["#", "#", "#"]
-   },
-   bgColor: "#"
-   colors: ["#", "#", "#"]
-   },
-   bgColor: "#"
-   colors: ["#", "#", "#"]
-   },
-]
-
-But, Im confused should I define seperate each colors: [] array according to the shape count?
-for two shape colors: ["#", "#"], theree shape colors: ["#", "#", "#"], four shape colors: ["#", "#", "#", "#"]
-or there's something better apporoach could be or in simplicity
-*/ 

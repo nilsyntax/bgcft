@@ -3,27 +3,28 @@ import Sidebar from "./layout/Sidebar"
 import PresetList from "./layout/PresetList"
 import PreviewArea from "./layout/PreviewArea"
 
-import { makeMesh } from "./bgPresets/mesh"
+import { make } from "./presets/mesh/core/make"
 
 function App() {
-  const[meshBg, generateMeshBG] = useState(makeMesh())
+  const [meshBg, generateMeshBG] = useState(make())
 
-  function handleGeneration(){
-    generateMeshBG(makeMesh())
+  // const handleGeneration = () => generateMeshBG(make())
+
+  const handleGeneration = () => {
+    console.log(meshBg)
+    return generateMeshBG(make())
   }
 
   return (
     <>
       <div className="relative flex h-screen w-full p-2">
-        <Sidebar onGenerate={handleGeneration}/>           {/* Gets the editing tools of the current selected style */}
-        <PreviewArea mesh={meshBg}/>       {/*Preview of generated bg on state update*/}
-        <PresetList />        {/*List the preset styles for bg generation -> Register*/}
+        <Sidebar onGenerate={handleGeneration}/>
+        <PreviewArea mesh={meshBg}/>
+        <PresetList />
       </div>
     </>
   )
 }
 
 export default App
-
-// onclickaction -> call makeShape() -> set new shape to state -> import renderShape -> add state data to renderShape -> update to preview 
 

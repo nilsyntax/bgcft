@@ -1,8 +1,9 @@
 import PreviewCanvas from "./previewCanvas"
-import { type ShapeProps } from "../bgPresets/mesh/core/meshConfig"
+import { type SvgProps } from "../presets/mesh/types"
+
 
 type previewAreaProps = {
-   mesh: ShapeProps[];
+   mesh: SvgProps;
 }
 
 function PreviewArea({mesh}: previewAreaProps) {

@@ -1,11 +1,9 @@
 import { useState } from "react"
-import { RenderMesh } from "../bgPresets/mesh"
+import { type SvgProps } from "../presets/mesh/types"
+import { RenderMesh } from "../presets/mesh/render/Render"
 
-import { type ShapeProps } from "../bgPresets/mesh/core/meshConfig"
 
-type PreviewCanvasProps = {
-   mesh: ShapeProps[];
-}
+type PreviewCanvasProps = { mesh: SvgProps; }
 
 function PreviewCanvas({mesh}: PreviewCanvasProps) {
 

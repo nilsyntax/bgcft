@@ -9,5 +9,3 @@ function PresetList(){
 }
 
 export default PresetList
-
-// absolute top-2 right-2 bottom-2

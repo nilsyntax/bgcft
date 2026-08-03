@@ -1,7 +1,6 @@
-import { type ShapeProps } from "../coreO/meshConfig"
-
+import { type ShapeProps } from "../types.ts";
 export function Shapes({
-   shape, // svg path 
+   path, // svg path 
    color,
    position,
    scale,
@@ -12,12 +11,9 @@ export function Shapes({
    const posX = position.x / 100 * VIEW_BOX
    const posY = position.y / 100 * VIEW_BOX
 
-   // const posX = position.x
-   // const posY = position.y
-
    return (
       <path
-         d={shape}
+         d={path.d}
          fill={color}
          transform={`
             translate(${posX}, ${posY})

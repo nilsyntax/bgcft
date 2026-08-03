@@ -2,32 +2,37 @@ import { random } from "../../../utils/random.ts";
 import { pickItem, pickItems } from "../../../utils/pickItems.ts";
 
 import { paths } from "./config/paths.ts";
-import { bgColor, colorPalette } from "./config/colors.ts";
+import { backgrounds, colorPalette } from "./config/colors.ts";
 import { layouts } from "./config/layout.ts";
+import { type SvgProps } from "../types.ts";
 
 
-export function make() {
+export function make(): SvgProps {
    const count = random(2, 3)
-   console.log(count)
+
    const svgPaths = pickItems(paths, count)
    const layoutDat = pickItem(layouts[count])
 
    const theme = pickItem(colorPalette)
    const colors = pickItems(theme.colors, count)
-   const bgColorId = pickItem(theme.bgColor)
+   const bgId = pickItem(theme.bgColor)
+   const background = backgrounds.find(bg => bg.id === bgId)
 
-   // return bgColorId
+   if (!background) {
+      throw new Error(`Background "${bgId}" not found`)
+   }
+
    return {
-      bgColorId,
+      background: background.color,
 
       shapeDat: svgPaths.map((path, i) => ({
          path,
          color: colors[i],
          position: layoutDat[i],
-         scale: 4,
-         blur: 30
+         scale: 5,
+         blur: 100
       }))
    }
 }
 
-console.dir(make(), {depth: null})
+console.dir(make(), { depth: null })

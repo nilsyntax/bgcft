@@ -1,4 +1,4 @@
-import { type Path } from "./types.ts"
+import { type Path } from "../../types.ts"
 
 export const paths: Path[] = [
    {

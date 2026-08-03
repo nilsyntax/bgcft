@@ -1,4 +1,4 @@
-import { type LayoutMap } from "./types.ts"
+import { type LayoutMap } from "../../types.ts"
 
 export const layouts: LayoutMap = {
   2: [

@@ -1,12 +1,13 @@
-import { type BGColor, type ColorPalette } from "./types.ts";
+import { type Backgrounds, type ColorPalette } from "../../types.ts";
 
 
-export const bgColor: BGColor[] = [
+export const backgrounds: Backgrounds[] = [
    { id: "dark", color: "#0A0A0A" },
    { id: "navy", color: "#0F172A" },
-   { id: "purple", color: "#1E1B4B" },
+   { id: "purple", color: "#481b5a" },
    { id: "midnight", color: "#020617" },
-   { id: "slate", color: "#111827" }
+   { id: "slate", color: "#111827" },
+   { id: "green", color: "#17432f"}
 ]
 
 
@@ -19,7 +20,7 @@ export const colorPalette: ColorPalette[] = [
          "#39FF14", // Neon Green
          "#7C3AED", // Electric Purple
       ],
-      bgColor: ["dark", "navy", "purple"],
+      bgColor: ["dark", "navy", "purple", "green"],
    },
 
    {

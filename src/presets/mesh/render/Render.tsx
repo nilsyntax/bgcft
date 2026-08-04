@@ -12,7 +12,7 @@ export function RenderMesh({ mesh }: RenderMeshProps) {
       <svg
          viewBox={`0, 0, ${VIEW_BOX}, ${VIEW_BOX}`}
          preserveAspectRatio="none"
-         className="border-5 w-full h-full">
+         className="w-full h-full">
          <rect
             x={0} y={0}
             height={VIEW_BOX}

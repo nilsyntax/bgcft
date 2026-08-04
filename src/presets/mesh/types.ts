@@ -34,16 +34,14 @@ export type SvgProps = {
    shapeDat: ShapeProps[];
 }
 
-// defination for color palette
-export interface Backgrounds {
-  id: string
-  color: string
-}
-
 export interface ColorPalette {
   id: string
   colors: string[]
   bgColor: string[]  // background color id
 }
 
+export interface ColorTheme {
+  id: string
+  colors: string[]
+}
 

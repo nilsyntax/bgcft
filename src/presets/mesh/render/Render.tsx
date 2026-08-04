@@ -1,18 +1,25 @@
 import { Shapes } from "./Shape.tsx";
 import { type SvgProps } from "../types.ts";
 
-
-type RenderMeshProps = { mesh: SvgProps;}
+type RenderMeshProps = { mesh: SvgProps; }
 
 export function RenderMesh({ mesh }: RenderMeshProps) {
 
    const VIEW_BOX: number = 1000
-   
+
    return (
       <svg
          viewBox={`0, 0, ${VIEW_BOX}, ${VIEW_BOX}`}
          preserveAspectRatio="none"
-         className="w-full h-full">
+         className="w-full h-full"
+         style={{
+            filter: `
+            brightness(${mesh.effects.brightness}%)
+            contrast(${mesh.effects.contrast}%)
+            hue-rotate(${mesh.effects.hue}deg)
+            opacity(${mesh.effects.opacity})
+            `
+         }}>
          <rect
             x={0} y={0}
             height={VIEW_BOX}

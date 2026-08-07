@@ -9,27 +9,37 @@ export function RenderMesh({ mesh }: RenderMeshProps) {
 
    return (
       <svg
-         viewBox={`0, 0, ${VIEW_BOX}, ${VIEW_BOX}`}
+         viewBox={`0 0 ${VIEW_BOX} ${VIEW_BOX}`}
          preserveAspectRatio="none"
          className="w-full h-full"
+         fill="none"
          style={{
             filter: `
-            brightness(${mesh.effects.brightness}%)
-            contrast(${mesh.effects.contrast}%)
-            hue-rotate(${mesh.effects.hue}deg)
-            opacity(${mesh.effects.opacity})
-            `
+               brightness(${mesh.effects.brightness}%)
+               contrast(${mesh.effects.contrast}%)
+               hue-rotate(${mesh.effects.hue}deg)
+               opacity(${mesh.effects.opacity})`,
          }}>
+         <defs>
+            <filter id="meshBlur">
+               <feGaussianBlur stdDeviation={mesh.effects.blur} />
+            </filter>
+         </defs>
+
          <rect
-            x={0} y={0}
-            height={VIEW_BOX}
+            x={0}
+            y={0}
             width={VIEW_BOX}
-            fill={`${mesh.background}`}
+            height={VIEW_BOX}
+            fill={mesh.background}
          />
 
-         {mesh.shapeDat.map((shape, i) => (
-            <Shapes key={i} {...shape} />
-         ))}
+         {/* Only the shapes are blurred */}
+         <g filter="url(#meshBlur)">
+            {mesh.colorShape.map((shape, i) => (
+               <Shapes key={i} {...shape} />
+            ))}
+         </g>
       </svg>
    )
 }

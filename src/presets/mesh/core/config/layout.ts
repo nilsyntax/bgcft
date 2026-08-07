@@ -1,6 +1,12 @@
 import { type LayoutMap } from "../../types.ts"
 
 export const layouts: LayoutMap = {
+  1: [
+    [{x: 30, y: 30}],
+    [{x: 70, y: 70}],
+    [{x: 30, y: 70}],
+    [{x: 70, y: 30}]
+  ],
   2: [
     // Horizontal
     [

@@ -14,32 +14,32 @@ export interface Position {
   x: number
   y: number
 }
-
 export type Layout = Position[]
 
 export type LayoutMap = {
   [count: number]: Layout[]
 }
 
-export interface ShapeProps {
+
+export interface colorShapeProp {
   path: Path
   color: string
   position: Position
   scale: number
-  blur: number
 }
-
 export interface EffectsProps {
+  blur: number
   brightness: number
   contrast: number
   hue: number
   opacity: number
   grain: number
-  noise: number
 }
+
+
 export type SvgProps = {
   background: string
-  shapeDat: ShapeProps[]
+  colorShape: colorShapeProp[]
   effects: EffectsProps
 }
 

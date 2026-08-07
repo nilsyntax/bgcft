@@ -5,12 +5,13 @@ import { paths } from "./config/paths.ts";
 import { colorTheme } from "./config/colors.ts";
 import { layouts } from "./config/layout.ts";
 import { defaultMeshSettings } from "./default.ts";
+import { random } from "../../../utils/random.ts";
 
 
 export function make(): SvgProps {
 
-   const count = 2
-   const { scale, blur, brightness, contrast, hue, opacity, grain, noise } = defaultMeshSettings
+   const count = random(1, 2)
+   const { scale, blur, brightness, contrast, hue, opacity, grain } = defaultMeshSettings
 
    const svgPaths = pickItems(paths, count)
    const layoutDat = pickItem(layouts[count])
@@ -23,21 +24,20 @@ export function make(): SvgProps {
    return {
       background: bgColor,
 
-      shapeDat: svgPaths.map((path, i) => ({
+      colorShape: svgPaths.map((path, i) => ({
          path,
          color: shapeColors[i],
          position: layoutDat[i],
          scale,
-         blur
       })),
-
+      
       effects: {
+         blur,
          brightness,
          contrast,
          hue,
          opacity,
          grain,
-         noise,
       }
    }
 }

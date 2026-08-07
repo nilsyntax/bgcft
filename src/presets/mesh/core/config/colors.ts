@@ -2,10 +2,15 @@ import { type ColorPalette, type ColorTheme } from "../../types.ts";
 
 export const colorTheme: ColorTheme[] = [
 
-   { id: "neon1", colors: ["rgb(240, 66, 211)", "#9457ff", "#1b81ff"] },
+   { id: "neon1", colors: ["#f042d3", "#9457ff", "#1b81ff"] },
    { id: "aurora1", colors: ["#00E5A8", "#00C2FF", "#6D5DFD"] },
    { id: "aurora2", colors: ["#00C2FF", "#6D5DFD", "#A855F7"] },
 ]
+
+
+
+
+
 
 
 

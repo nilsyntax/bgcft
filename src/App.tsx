@@ -6,19 +6,29 @@ import PreviewArea from "./layout/PreviewArea"
 import { make } from "./presets/mesh/core/make"
 
 function App() {
-  const [meshBg, generateMeshBG] = useState(make())
+  const [meshBg, setMeshBg] = useState(make())
 
-  // const handleGeneration = () => generateMeshBG(make())
+  const handleGeneration = () => setMeshBg(make())
 
-  const handleGeneration = () => {
-    console.log(meshBg)
-    return generateMeshBG(make())
+  const handleEffectChange = (id: string, value: number) => {
+   setMeshBg(prev => ({
+    ...prev,
+    effects: {
+      ...prev.effects,
+      [id]: value,
+    }
+   }))
   }
+
 
   return (
     <>
       <div className="relative flex h-screen w-full p-2">
-        <Sidebar onGenerate={handleGeneration}/>
+        <Sidebar 
+        onGenerate={handleGeneration}
+        mesh={meshBg}
+        onEffectChange={handleEffectChange}
+        />
         <PreviewArea mesh={meshBg}/>
         <PresetList />
       </div>
